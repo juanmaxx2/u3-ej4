@@ -8,20 +8,23 @@ class Menu:
     def Iniciar(self,cant):
         unManejador=Manejador(cant)
         unManejador.Iniciar()
-        while self.__opcion!='3':
-            print('\n1.')
-            print('2.')
-            print('3.')
-            print('4.')
+        while self.__opcion!='4':
+            print('\n1.Menor consumo de calefactor a gas natural')
+            print('2.Menor consumo de calefactor electrico')
+            print('3.Mostrar los 2 calefactores de menor consumo')
+            print('4.Salir')
             self.__opcion=input('Elija la opcion del que desee realizar:')
 
             if self.__opcion=='1':
-                costo=input('\nIngrese el costo por m3')
-                estimado=input('ingrese la cantidad que se estima consumir por M3')
+                costo=int(input('\nIngrese el costo por m3:'))
+                estimado=int(input('ingrese la cantidad que se estima consumir por M3:'))
                 i=1
-                unManejador.MenorCosto(costo,estimado,i)
+                gasnat=unManejador.MenorCosto(costo,estimado,i)
             elif self.__opcion=='2':
-                costo=input('\nIngrese el costo de el kilowatt/h')
-                estimado=('Ingrese la cantidad que se estima consumir por hora')
+                costo=int(input('\nIngrese el costo de el kilowatt/h:'))
+                estimado=int(input('Ingrese la cantidad que se estima consumir por hora:'))
                 i=2
-                unManejador.MenorCosto(costo,estimado,i)
+                ele=unManejador.MenorCosto(costo,estimado,i)
+            elif self.__opcion==3:
+                print(ele)
+                print(gasnat)

@@ -6,6 +6,9 @@ class Calefactor:
         self.__Marca=Marca
         self.__Modelo=Modelo
     
+    def __str__(self):
+        return self.__Marca+self.__Modelo
+
     def getMarca(self):
         return self.__Marca
 
